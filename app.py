@@ -5,14 +5,13 @@ import click
 from backend_config import max_docs, datafile, port, workdir, model
 
 # from executors.disk_indexer import DiskIndexer
-from jinahub.indexers.simple import SimpleIndexer
 from helper import prep_docs, deal_with_workspace
 from jina import Flow
 
 # encoder = 'jinahub://TransformerSentenceEncoder'
 encoder = 'jinahub://TransformerTorchEncoder'
 # indexer = DiskIndexer
-indexer = SimpleIndexer
+indexer = 'jinahub://SimpleIndexer'
 
 try:
     __import__("pretty_errors")
